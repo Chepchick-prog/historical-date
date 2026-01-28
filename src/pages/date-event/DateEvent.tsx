@@ -29,30 +29,36 @@ export const DateEventContainer: FC = () => {
                     </div>
                     <DateRange duration={duration.current} list={historicalDates[selectedSection].dates}/>
                 </div>
-                <Сarousel
-                    historicalDates={historicalDates}
-                    selectedSection={selectedSection}
-                    onSectionChange={setSelectedSection}
-                    duration={duration.current}
-                />
+                {historicalDates.length > 1 && (
+                    <Сarousel
+                        historicalDates={historicalDates}
+                        selectedSection={selectedSection}
+                        onSectionChange={setSelectedSection}
+                        duration={duration.current}
+                    />
+                )}
                 <div className={styles.bottom}>
                     <CustomSwiper 
                         list={historicalDates[selectedSection].dates}
                         duration={duration.current}
                         title={historicalDates[selectedSection].title}
                     />
-                    <Stepper 
-                        count={selectedSection}
-                        max={historicalDates.length}
-                        onSectionChange={setSelectedSection}
-                        duration={duration.current}
-                    />
-                    <Indicator
-                        length={historicalDates.length}
-                        selectedIndex={selectedSection}
-                        onSectionChange={setSelectedSection}
-                        duration={duration.current}
-                    />
+                    {historicalDates.length > 1 && (
+                        <>
+                            <Stepper 
+                                count={selectedSection}
+                                max={historicalDates.length > 6 ? 6 : historicalDates.length}
+                                onSectionChange={setSelectedSection}
+                                duration={duration.current}
+                            />
+                            <Indicator
+                                length={historicalDates.length > 6 ? 6 : historicalDates.length}
+                                selectedIndex={selectedSection}
+                                onSectionChange={setSelectedSection}
+                                duration={duration.current}
+                            />
+                        </>
+                    )}
                 </div>
                 <div className={styles.line_h}></div>
                 <div className={styles.line_v}></div>

@@ -20,8 +20,8 @@ export const Сarousel: FC<{
     onSectionChange: (section: number) => void;
     duration?: number;
 }> = ({selectedSection, historicalDates, duration = 1, onSectionChange }) => {
-    
-    const maxPoints = historicalDates.length;
+
+    const maxPoints = historicalDates.length > 6 ? 6 : historicalDates.length;
     const mainCircle = useRef<(HTMLDivElement | null)>(null);
     const childCircles = useRef<(HTMLDivElement | null)[]>([]);
     const {ref, size} = useElementSize()
