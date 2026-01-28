@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.swiper_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 20px;
+    border-top: 1px solid #C7CDD9 ;
+}
+
+.swiper_mainTitle {
+    position: absolute;
+    top: -50px;
+    left: 0;
+}
+
+.custom_swiper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 166px;
+    max-width: 320px;
+}
+
+.swiper_card_date {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: #3877EE;
+}
+
+.swiper_card_description {
+    font-size: 14px;
+    line-height: 145%;
+    color: #42567A;
+}
+
+.swiper__nav_button_prev, .swiper__nav_button_next {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper__nav_button_next {
+    right: 0;
+    margin-right: 20px;
+}
+
+.swiper__nav_button_prev {
+    left: 0;
+    margin-left: 20px;
+}
+
+.nav_button_disabled {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .swiper_card_date {
+        font-size: 20px;
+    }
+
+    .swiper_card_description {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .swiper_container {
+        border: unset;
+    }
+
+    .swiper_mainTitle {
+        display: none;
+    }
+
+    .custom_swiper {
+        margin: 0 80px;
+    }
+
+    .swiper__nav_button_prev, .swiper__nav_button_next {
+        display: flex;
+    }
+}
+
+@media (min-width: 1640px) {
+
+    .swiper_container {
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .swiper__nav_button_prev, .swiper__nav_button_next {
+        position: unset;
+    }
+
+    .swiper__nav_button_next {
+        margin-right: 40px;
+    }
+
+    .swiper__nav_button_prev {
+        margin-left: 40px;
+    }
+
+    .swiper_card_date {
+        font-size: 25px;
+    }
+
+    .swiper_card_description {
+        font-size: 20px;
+    }
+}

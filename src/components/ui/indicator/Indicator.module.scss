@@ -1,0 +1,23 @@
+.indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+
+    & .circle {
+        width: 6px;
+        height: 6px;
+        background-color: #42567A;
+        border-radius: 100%;
+        opacity: 0.4;
+    }
+
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}

@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    user-select: none;
+
+    & span {
+        color: #5D5FEF;
+        font-size: 56px;
+        font-weight: bold;
+        line-height: 160%;
+        letter-spacing: -2px;
+    }
+
+    & span + span {
+        color: #EF5DA8;
+    }
+
+    @media (min-width: 320px) {
+        justify-content: center;
+
+        & span {
+            font-size: clamp(56px, 15vw, 150px);
+        }
+    }
+
+    @media (min-width: 425px) {
+        gap: clamp(30px, 10vw, 60px);
+    }
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        top: 40%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+        gap: 80px;
+
+        & span {
+            font-size: clamp(150px, 11vw, 200px);
+        }
+    }
+}
